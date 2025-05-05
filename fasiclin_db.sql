@@ -11,7 +11,7 @@
 */
 
 
-/*
+-- /*
 -- TABLESPACES --
 
 CREATE TABLESPACE TS_AGENDA
