@@ -99,6 +99,30 @@ CALL SP_CADASTRAR_PESSOA('J',NULL,NULL,NULL,NULL,'74185296000100','Iota Soluçõ
 CALL SP_CADASTRAR_PESSOA('J',NULL,NULL,NULL,NULL,'25896314000188','Kappa Distribuidora','Kappa Dist','4647101','RES',1,'Avenida Faria Lima','3500','Conjunto 1201','Jardim Paulistano','04538000',10,4,'11900009999','distribuicao@kappa.com');
 
 
+CALL SP_CADASTRAR_PESSOA(
+    'F',                      -- P_TIPOPESSOA
+    '12345678901',           -- P_CPF
+    'João da Silva',         -- P_NOME
+    '1990-05-15',            -- P_DATANASC
+    'M',                     -- P_SEXO
+    NULL,                    -- P_CNPJ (não utilizado para pessoa física)
+    NULL,                    -- P_RAZSOCIAL
+    NULL,                    -- P_NOMEFAN
+    NULL,                    -- P_CNAE
+    'RES',                   -- P_TIPOENDER
+    1,                       -- P_ID_TIPOLOGRA (supondo que 1 seja "Rua")
+    'Rua das Flores',        -- P_LOGRADOURO
+    '123',                   -- P_NUMEENDER
+    'Ap 202',                -- P_COMPLEMENTO
+    'Jardim Primavera',      -- P_BAIRRO
+    '12345678',              -- P_CEP
+    10,                      -- P_ID_CIDADE (ex: São Paulo)
+    2,                       -- P_ID_TIPOCONTATO (ex: Celular)
+    '11999998888',           -- P_NUMERO
+    'joao.silva@email.com'   -- P_EMAIL
+);
+
+
 INSERT INTO CONTATO (ID_TIPOCONTATO, NUMERO, ID_PESSOA) VALUES (1, '11987654321', 1);
 INSERT INTO CONTATO (ID_TIPOCONTATO, NUMERO, ID_PESSOA) VALUES (2, '21912345678', 2);
 INSERT INTO CONTATO (ID_TIPOCONTATO, NUMERO, ID_PESSOA) VALUES (3, '31998765432', 3);
@@ -129,6 +153,7 @@ INSERT INTO EMAIL (EMAIL, ID_PESSOA) VALUES ('contato10@empresa.com', 10);
 
 
 SELECT 
+	IDPESSOA,
 	NOME,
 	CPF,
 	DATA_NASCIMENTO,
@@ -143,4 +168,5 @@ SELECT
     EMAIL, CONTATO,
     TIPO_CONTATO
 FROM VW_PESSOAFIS
+ORDER BY IDPESSOA DESC
 ;
