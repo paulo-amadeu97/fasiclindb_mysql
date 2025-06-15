@@ -60,6 +60,7 @@
         | 05/06/25	| ALTER TYPE OF PERGUNTA IN PERGUNTA (TEXT -> VARCHAR(255))	| ENF, ODON, NUTR, PSI, FISIO	|
         | 05/06/25	| CREATE PROCEDURE SP_INSERT_PERGUNTA						| ENF, ODON, NUTR, PSI, FISIO	|
         | 05/06/25	| CREATE VIEW VW_PERGUNTA_ANAMNESE							| ENF, ODON, NUTR, PSI, FISIO	|
+        | 15/06/25	| ADD COLUMN DESCRCOMP IN AGENDA							| AGENDA						|
         ´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´´
 */
 
@@ -256,6 +257,7 @@ CREATE TABLE AGENDA(
 	ID_PESSOAFIS INT,
 	ID_PROFISSIO INT NOT NULL,
 	ID_PROCED INT NOT NULL,
+    DESCRCOMP VARCHAR(250),
 	DATAABERT DATETIME NOT NULL,
     SITUAGEN ENUM('1','2','3') NOT NULL DEFAULT '1'
 )
