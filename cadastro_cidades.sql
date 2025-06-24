@@ -1,6 +1,6 @@
 USE fasiclin;
 
-
+START TRANSACTION;
 INSERT INTO CIDADE(ESTADO, CIDADE)
 VALUES
 	('RO', 'Alta Floresta DOeste'),
@@ -5573,3 +5573,4 @@ VALUES
 	('GO', 'Vila Boa'),
 	('GO', 'Vila Propício'),
 	('DF', 'Brasília');
+COMMIT;

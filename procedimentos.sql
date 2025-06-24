@@ -1,5 +1,6 @@
 USE fasiclin;
 
+START TRANSACTION;
 INSERT INTO PROCEDIMENTO(CODPROCED,DESCRPROC,VALORPROC)
 VALUES
 	('10101012','Consulta em consultório (no horário normal ou preestabelecido)',41),
@@ -5967,6 +5968,7 @@ VALUES
 	('30905079','Instalação de dispositivo de assistência ventricular esquerda (DAVE) por toracotomia',97),
 	('30905087','Manutenção de dispositivo de assistência ventricular esquerda (DAVE)',63);
 
+COMMIT;
 SELECT 
 	IDPROCED,
     CODPROCED,
